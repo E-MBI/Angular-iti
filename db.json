@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "name": "laptob",
+      "price": 200,
+      "category": "devices",
+      "quantity": 25
+    },
+    {
+      "name": "hard ssd 128",
+      "price": 50,
+      "category": "devices",
+      "quantity": 2
+    }
+  ]
+}

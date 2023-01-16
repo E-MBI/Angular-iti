@@ -1,0 +1,108 @@
+<div class="container pt-5">
+  <form #addProduct="ngForm" (ngSubmit)="onAddProduct()" class="w-75 mx-auto">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Product Name</label>
+      <input
+        #proName="ngModel"
+        [(ngModel)]="newProd.name"
+        type="text"
+        class="form-control"
+        name="pName"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        pattern="[a-zA-Z]{3,}"
+        required
+      />
+      <!-- errors/?   -->
+      <div
+        [hidden]="proName.valid || proName.untouched"
+        class="alert alert-danger"
+      >
+        <small *ngIf="proName.errors?.['required']"
+          >this filed is required</small
+        >
+        <small *ngIf="proName.errors?.pattern"
+          >Must be gerater than 3 letters</small
+        >
+      </div>
+    </div>
+
+    <!-- !price -->
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Product Price</label
+      >
+      <input
+        #proPrice="ngModel"
+        [(ngModel)]="newProd.price"
+        type="number"
+        name="pPrice"
+        class="form-control"
+        min="5"
+        max="5000"
+        id="exampleInputPassword1"
+        required
+      />
+      <!-- errors/?   -->
+      <!-- <div [hidden]="proName.errors?.['required']" class="alert alert-danger">
+        <small></small>
+        <small></small>
+      </div> -->
+    </div>
+
+    <!-- !category -->
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Product Category</label
+      >
+      <select
+        #proCat="ngModel"
+        [(ngModel)]="newProd.category"
+        class="form-select"
+        name="pCat"
+        required
+      >
+        <option value="labtop">1 Labtop</option>
+        <option value="mobile">2 Mobile</option>
+        <option value="mouse">3 Mouse</option>
+      </select>
+
+      <!-- errors/?   -->
+      <!-- <div [hidden]="proName.errors?.['required']" class="alert alert-danger">
+        <small></small>
+        <small></small>
+      </div> -->
+    </div>
+
+    <!-- !quantity -->
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Product Quantity</label
+      >
+      <input
+        #proQuant="ngModel"
+        [(ngModel)]="newProd.quantity"
+        type="number"
+        name="pQuant"
+        class="form-control"
+        min="1"
+        max="5000"
+        id="exampleInputPassword1"
+        required
+      />
+      <!-- errors/?   -->
+      <!-- <div [hidden]="proName.errors?.['required']" class="alert alert-danger">
+        <small></small>
+        <small></small>
+      </div> -->
+    </div>
+
+    <button
+      [disabled]="addProduct?.invalid"
+      type="submit"
+      class="btn btn-primary"
+    >
+      Add New Item
+    </button>
+  </form>
+</div>
