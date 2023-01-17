@@ -1,16 +1,39 @@
 {
   "products": [
     {
+      "id": 1,
       "name": "laptob",
       "price": 200,
       "category": "devices",
       "quantity": 25
     },
     {
+      "id": 2,
       "name": "hard ssd 128",
       "price": 50,
       "category": "devices",
       "quantity": 2
+    },
+    {
+      "name": "mobile",
+      "price": 200,
+      "category": "devices",
+      "quantity": 25,
+      "id": 4
+    },
+    {
+      "name": "AppleXR",
+      "price": 450,
+      "category": "mobile",
+      "quantity": 1,
+      "id": 5
+    },
+    {
+      "name": "dddd",
+      "price": 450,
+      "category": "mouse",
+      "quantity": 1,
+      "id": 6
     }
   ]
 }

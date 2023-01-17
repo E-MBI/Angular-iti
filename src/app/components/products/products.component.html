@@ -1,11 +1,19 @@
-<div class="card" style="width: 18rem" *ngFor="let pro of prodArr">
-  <div class="card-body">
-    <h5 class="card-title">{{ pro.name }}</h5>
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </p>
+<div class="container mx-auto">
+  <div [hidden]="prodArr.length != 0" class="noprod alert alert-warning">
+    no product found yet
   </div>
+
+  <div class="card m-3" style="width: 25rem" *ngFor="let pro of prodArr">
+    <div class="card-body">
+      <h5 class="card-title">{{ pro.name }}</h5>
+      <div class="d-flex justify-content-between">
+        <p class="card-text"><strong>pric:</strong> {{ pro.price }} $</p>
+        <p class="card-text"><strong>category:</strong> {{ pro.category }}</p>
+        <p class="card-text"><strong>quantity:</strong> {{ pro.quantity }}</p>
+      </div>
+    </div>
+    <br />
+  </div>
+
+  <button class="btn btn-dark" routerLink="/">Home</button>
 </div>
-<br />
-<a class="btn btn-primary" routerLink="/"> Home</a>

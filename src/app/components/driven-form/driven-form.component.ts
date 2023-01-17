@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { Iproduct } from 'src/app/interface/iproduct';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-driven-form',
@@ -8,14 +10,18 @@ import { Iproduct } from 'src/app/interface/iproduct';
   styleUrls: ['./driven-form.component.scss'],
 })
 export class DrivenFormComponent {
-  constructor(private router: Router) {}
-  newProd: Iproduct = {} as Iproduct;
+  constructor(private router: Router, private proServ: ProductsService) {}
+  newProd: Iproduct = {
+    name: '',
+    price: 0,
+    category: '',
+    quantity: 0,
+  };
 
   //func's
   onAddProduct() {
-    //here call the method on product services to post the new product
-    console.log(this.newProd);
-
-    // this.router.navigateByUrl('/products');
+    const newProduct = this.newProd;
+    this.proServ.addNewProduct(newProduct).subscribe((prd) => {});
+    this.router.navigateByUrl('/products');
   }
 }

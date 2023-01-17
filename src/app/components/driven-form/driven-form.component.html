@@ -1,4 +1,6 @@
 <div class="container pt-5">
+  <!-- <div class="bg-succes">{{ newProd | json }}</div> -->
+
   <form #addProduct="ngForm" (ngSubmit)="onAddProduct()" class="w-75 mx-auto">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Product Name</label>
@@ -33,7 +35,7 @@
         >Product Price</label
       >
       <input
-        #proPrice="ngModel"
+        #pPrice="ngModel"
         [(ngModel)]="newProd.price"
         type="number"
         name="pPrice"
@@ -44,10 +46,14 @@
         required
       />
       <!-- errors/?   -->
-      <!-- <div [hidden]="proName.errors?.['required']" class="alert alert-danger">
-        <small></small>
-        <small></small>
-      </div> -->
+      <div
+        [hidden]="pPrice.valid || pPrice.untouched"
+        class="alert alert-danger"
+      >
+        <small *ngIf="pPrice.errors?.['required']"
+          >this filed is required</small
+        >
+      </div>
     </div>
 
     <!-- !category -->
@@ -56,7 +62,7 @@
         >Product Category</label
       >
       <select
-        #proCat="ngModel"
+        #pCat="ngModel"
         [(ngModel)]="newProd.category"
         class="form-select"
         name="pCat"
@@ -68,10 +74,11 @@
       </select>
 
       <!-- errors/?   -->
-      <!-- <div [hidden]="proName.errors?.['required']" class="alert alert-danger">
-        <small></small>
-        <small></small>
-      </div> -->
+      <div [hidden]="pCat.valid || pCat.untouched" class="alert alert-danger">
+        <small *ngIf="pCat.errors?.['required']">
+          The Category of product is required
+        </small>
+      </div>
     </div>
 
     <!-- !quantity -->
@@ -80,7 +87,7 @@
         >Product Quantity</label
       >
       <input
-        #proQuant="ngModel"
+        #pQuant="ngModel"
         [(ngModel)]="newProd.quantity"
         type="number"
         name="pQuant"
@@ -91,10 +98,14 @@
         required
       />
       <!-- errors/?   -->
-      <!-- <div [hidden]="proName.errors?.['required']" class="alert alert-danger">
-        <small></small>
-        <small></small>
-      </div> -->
+      <div
+        [hidden]="pQuant.valid || pQuant.untouched"
+        class="alert alert-danger"
+      >
+        <small *ngIf="pQuant.errors?.['required']">
+          The Quantity of product is required
+        </small>
+      </div>
     </div>
 
     <button
