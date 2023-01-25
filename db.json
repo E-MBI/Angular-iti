@@ -1,39 +1,18 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "laptob",
-      "price": 200,
-      "category": "devices",
-      "quantity": 25
+      "name": "laptop",
+      "price": 9,
+      "category": "labtop",
+      "quantity": 5,
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "hard ssd 128",
-      "price": 50,
-      "category": "devices",
-      "quantity": 2
-    },
-    {
-      "name": "mobile",
-      "price": 200,
-      "category": "devices",
-      "quantity": 25,
-      "id": 4
-    },
-    {
-      "name": "AppleXR",
-      "price": 450,
-      "category": "mobile",
+      "name": "MouseBada",
+      "price": 150,
+      "category": "labtop",
       "quantity": 1,
-      "id": 5
-    },
-    {
-      "name": "dddd",
-      "price": 450,
-      "category": "mouse",
-      "quantity": 1,
-      "id": 6
+      "id": 2
     }
   ]
 }

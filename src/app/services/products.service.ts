@@ -34,4 +34,14 @@ export class ProductsService {
         })
       );
   }
+
+  onDeleteProduct(prodID: any): Observable<any> {
+    const delUrl = 'http://localhost:8080/products';
+    return this.http.delete<any>(`${delUrl}/${prodID}`, this.option).pipe(
+      retry(2),
+      catchError((err) => {
+        return throwError(() => new Error(err));
+      })
+    );
+  }
 }

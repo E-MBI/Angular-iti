@@ -19,4 +19,12 @@ export class ProductsComponent implements OnInit {
       error: (err) => console.log(err),
     });
   }
+
+  showProData(id: any) {}
+
+  onDeletPro(id: any) {
+    this.prodSer.onDeleteProduct(id).subscribe({
+      next: () => (this.prodArr = this.prodArr.filter((Pro) => Pro.id != id)),
+    });
+  }
 }
