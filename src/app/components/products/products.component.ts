@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Iproduct } from 'src/app/interface/iproduct';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -12,7 +12,6 @@ export class ProductsComponent implements OnInit {
   prodArr: Iproduct[] = [];
 
   constructor(private prodSer: ProductsService) {}
-
   ngOnInit(): void {
     this.prodSer.getAllProducts().subscribe({
       next: (value) => (this.prodArr = value),
@@ -20,7 +19,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  showProData(id: any) {}
+  showProData(item: any) {}
 
   onDeletPro(id: any) {
     this.prodSer.onDeleteProduct(id).subscribe({

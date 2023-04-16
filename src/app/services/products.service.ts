@@ -23,6 +23,10 @@ export class ProductsService {
     return this.http.get<Iproduct[]>(this.apiUrl);
   }
 
+  getProductById(proId: any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${proId}`);
+  }
+
   addNewProduct(newProd: Iproduct): Observable<Iproduct> {
     return this.http
       .post<Iproduct>(this.apiUrl, JSON.stringify(newProd), this.option)
@@ -33,6 +37,16 @@ export class ProductsService {
           return throwError(() => new Error('error occurred', err));
         })
       );
+  }
+
+  onUpdatePro(prodID: any): Observable<any> {
+    const proUrl = 'http://localhost:8080/products';
+    return this.http.put<any>(`${proUrl}/${prodID}`, this.option).pipe(
+      retry(3),
+      catchError((err) => {
+        return throwError(() => new Error(err));
+      })
+    );
   }
 
   onDeleteProduct(prodID: any): Observable<any> {

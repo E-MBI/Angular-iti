@@ -21,7 +21,9 @@ export class DrivenFormComponent {
   //func's
   onAddProduct() {
     const newProduct = this.newProd;
-    this.proServ.addNewProduct(newProduct).subscribe((prd) => {});
+    this.proServ.addNewProduct(newProduct).subscribe((prd) => {
+      console.log(prd);
+    });
     this.router.navigateByUrl('/products');
   }
 }

@@ -1,18 +1,25 @@
 {
   "products": [
     {
-      "name": "laptop",
-      "price": 9,
+      "name": "labtob",
+      "price": 150,
       "category": "labtop",
-      "quantity": 5,
+      "quantity": 2,
       "id": 1
     },
     {
-      "name": "MouseBada",
-      "price": 150,
-      "category": "labtop",
-      "quantity": 1,
+      "name": "iphone",
+      "price": 200,
+      "category": "mobile",
+      "quantity": 200,
       "id": 2
+    },
+    {
+      "name": "mouse",
+      "price": 9,
+      "category": "mouse",
+      "quantity": 3,
+      "id": 3
     }
   ]
 }

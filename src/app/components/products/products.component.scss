@@ -1,3 +1,13 @@
+@import "../../../assets/_general";
+
+.container-fluid {
+  header {
+  }
+  section {
+    @include flex(row, center, center, wrap, 0.5rem);
+  }
+}
+
 .noprod {
   width: 50%;
   text-transform: capitalize;

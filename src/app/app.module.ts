@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DrivenFormComponent } from './components/driven-form/driven-form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ProductsComponent } from './components/products/products.component';
     DrivenFormComponent,
     HeaderComponent,
     ProductsComponent,
+    DetailsComponent,
   ],
   imports: [HttpClientModule, BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

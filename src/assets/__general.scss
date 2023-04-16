@@ -1,0 +1,14 @@
+* {
+  --webkit-box-size: border-box;
+  --moz-box-size: border-box;
+  --box-size: border-box;
+}
+
+@mixin flex($dir, $content, $align, $wrap, $gap) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $content;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
